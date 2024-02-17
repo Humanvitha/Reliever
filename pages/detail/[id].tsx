@@ -24,6 +24,7 @@ const Detail = ({ postDetails }: IProps) => {
   const {userProfile}: any = useAuthStore();
   const [comment, setComment] = useState<string>('');
   const [isPostingComment, setIsPostingComment] = useState(false);
+  // if (!post) return null;
 
   const onVideoClick = () => {
     if (isPlaying) {
@@ -34,9 +35,6 @@ const Detail = ({ postDetails }: IProps) => {
       setIsPlaying(true);
     }
   };
-
-  if (!post) return null;
-
   useEffect(() => {
     if(post && videoRef?.current){
       videoRef.current.muted = isVideoMuted;
